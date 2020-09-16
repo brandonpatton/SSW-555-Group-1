@@ -1,6 +1,8 @@
+from prettytable import PrettyTable
 """
 Author: Alex Saltstein, Daniel Collins, James Surless, Miriam Podkolzin, Kenny Mason, Brandon Patton
-Description: This python script takes as input the name of your GEDCOM file that you want to read then outputs to the console
+Description: This python script reads the specified GEDCOM file that you want to read then outputs in a
+  pretty format the individuals and the families
     "--> <input line>" then
     "<-- <level>|<tag>|<valid?> : Y or N|<arguments>"
       <level> is the level of the input line, e.g. 0, 1, 2
@@ -24,9 +26,7 @@ class Individual:
     self.child.append(child)
 
   def toList(self):
-    return 
-    [self.iD,self.name,self.gender,self.birthday,self.age,self.alive,
-    self.death,self.child if len(self.child) != 0 else "NA",self.spouse]
+    return [self.iD,self.name,self.gender,self.birthday,self.age,self.alive,self.death,self.child if len(self.child) != 0 else "NA",self.spouse]
 
 class Family:
   def __init__(self, iD, married, divorced, husbId, husbName, wifeId, wifeName, children):
@@ -41,18 +41,30 @@ class Family:
 
   def addChild(self,child):
     self.children.append(child)
+    
+  def toList(self):
+    return [self.iD,self.married,self.divorced,self.husbId,self.husbName,self.wifeId,self.wifeName,self.children if len(self.children) != 0 else "NA"]
+    
+def printIndividuals(individuals):
+  table = PrettyTable()
+  table.field_names = ["ID","Name","Gender","Birthday","Age","Alive","Death","Child","Spouse"]
+  for i in individuals:
+    table.add_row(i.toList())
+  print("Individuals")
+  print(table)
+  
+def printFamily(families):
+  table = PrettyTable()
+  table.field_names = ["ID","Married","Divorced","Husband ID","Husband Name","Wife ID","Wife Name","Children"]
+  for f in families:
+    table.add_row(f.toList())
+  print("Families")
+  print(table)
 
+#beginning of script
 validTags = ["INDI","NAME","SEX","BIRT","DEAT","FAMC","FAMS","FAM","MARR","HUSB","WIFE","CHIL","DIV","DATE","HEAD","TRLR","NOTE"]
 
-#fileName = input("Input the name of the file you want to read:\n")
 f = open("my-family.ged", "r")
-
-I = Individual("1234", "John", "M", "20 AUG 1998", "22", "Y", "NA", [], "NA")
-
-I.addChild("John")
-I.death = "20 MAR 1969"
-print(I.child)
-print(I.death)
 
 """
 for line in f:
