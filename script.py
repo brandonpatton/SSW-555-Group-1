@@ -35,7 +35,7 @@ class Family:
     self.husbName = ""
     self.wifeId = ""
     self.wifeName = ""
-    self.children = "NA"
+    self.children = []
 
   def addChild(self,child):
     self.children.append(child)
@@ -72,6 +72,8 @@ def findat(f):
   found = False
   findingBirt = False
   findingDeat = False
+  findingMarr = False
+  findingDiv = False
   currI = 0
   for i,line in enumerate(f):
     line = line.replace("\n","")
@@ -123,7 +125,30 @@ def findat(f):
       else:
         #do fam parse
         try:
-          print(linelist)
+          if findingMarr:
+            families[len(families)-1].married = " ".join(linelist[2:])
+            findingMarr = False
+          if tag == "MARR":
+            findingMarr = True
+          if findingDiv:
+            families[len(families)-1].divorced = " ".join(linelist[2:])
+            findingDiv = False
+          if tag == "DIV":
+            findingDiv = True
+          if tag == "HUSB":
+            hid = linelist[2].strip("@")
+            families[len(families)-1].husbId = hid
+            for ind in individuals:
+              if ind.iD == hid:
+                families[len(families)-1].husbName = ind.name
+          if tag == "WIFE":
+            wid = linelist[2].strip("@")
+            families[len(families)-1].wifeId = wid
+            for ind in individuals:
+              if ind.iD == wid:
+                families[len(families)-1].wifeName = ind.name
+          if tag == "CHIL":
+            families[len(families)-1].addChild(linelist[2].strip("@"))
         except:
           #do nothing cause not valid tag
           pass
@@ -133,8 +158,8 @@ def findat(f):
       
             
 findat(f)
-#printIndividuals(individuals)
-#printFamily(families)
+printIndividuals(individuals)
+printFamily(families)
 """
 for line in f:
   l = line[:-1] if line.find("\n") != -1 else line
