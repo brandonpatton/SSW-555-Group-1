@@ -154,25 +154,6 @@ def findat(f):
           pass
       
       
-        
-      
-            
 findat(f)
 printIndividuals(individuals)
 printFamily(families)
-"""
-for line in f:
-  l = line[:-1] if line.find("\n") != -1 else line
-  print("-->",l)
-  list = l.split(" ")
-  try:
-    validTags.index(list[1])
-    print("<--", list[0] + "|" + list[1] + "|Y|" + " ".join(list[2:]))
-  except:
-    try:
-      validTags.index(list[2])
-      print("<--", list[0] + "|" + list[2] + "|Y|" + list[1])
-    except:
-      print("<--", list[0] + "|" + list[1] + "|N|" + " ".join(list[2:]))
-
-"""
