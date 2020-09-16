@@ -1,4 +1,5 @@
 from prettytable import PrettyTable
+from datetime import datetime
 """
 Author: Alex Saltstein, Daniel Collins, James Surless, Miriam Podkolzin, Kenny Mason, Brandon Patton
 Description: This python script reads the specified GEDCOM file that you want to read then outputs in a
@@ -17,13 +18,10 @@ class Individual:
     self.gender = ""
     self.birthday = ""
     self.age = ""
-    self.alive = "Y"
+    self.alive = True
     self.death = "NA"
     self.child = "NA"
     self.spouse = "NA"
-
-  def addChild(self,child):
-    self.child.append(child)
 
   def toList(self):
     return [self.iD,self.name,self.gender,self.birthday,self.age,self.alive,self.death,self.child if len(self.child) != 0 else "NA",self.spouse]
@@ -73,8 +71,10 @@ def findat(f):
   isInd = False
   found = False
   findingBirt = False
+  findingDeat = False
   currI = 0
   for i,line in enumerate(f):
+    line = line.replace("\n","")
     linelist = line.split(" ")
     i = linelist[1]
     if i[0] == "@":
@@ -92,23 +92,42 @@ def findat(f):
       if isInd:
         #do individual parse
         try:
-          validTags.index(tag)
           if tag == "NAME":
             individuals[len(individuals)-1].name = " ".join(linelist[2:])
           if tag == "SEX":
             individuals[len(individuals)-1].gender = linelist[2]
+          if findingBirt:
+            birthday = " ".join(linelist[2:])
+            datetime_object = datetime.strptime(birthday, '%d %b %Y')
+            individuals[len(individuals)-1].birthday = birthday
+            individuals[len(individuals)-1].age = str((datetime.now() - datetime_object)/365).split(" ")[0]
+            findingBirt = False
+          if findingDeat:
+            individuals[len(individuals)-1].death = " ".join(linelist[2:])
+            datetime_object_birt = datetime.strptime(individuals[len(individuals)-1].birthday, '%d %b %Y')
+            datetime_object_deat = datetime.strptime(individuals[len(individuals)-1].death, '%d %b %Y')
+            individuals[len(individuals)-1].age = str((datetime_object_deat - datetime_object_birt)/365).split(" ")[0]
+            individuals[len(individuals)-1].alive = False
+            findingDeat = False
           if tag == "BIRT":
-            print("here")
             findingBirt = True
-
+          if tag == "DEAT":
+            findingDeat = True
+          if tag == "FAMC":
+            individuals[len(individuals)-1].child = linelist[2].strip("@")
+          if tag == "FAMS":
+            individuals[len(individuals)-1].spouse = linelist[2].strip("@")
         except:
+          #do nothing cause not valid tag
           pass
-#      else:
-#        #do fam parse
-#        try:
-#          tag = validTags.index(list[1])
-#        except:
-#          #do nothing cause not valid tag
+      else:
+        #do fam parse
+        try:
+          print(linelist)
+        except:
+          #do nothing cause not valid tag
+          pass
+      
       
         
       
