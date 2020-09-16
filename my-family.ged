@@ -1,0 +1,198 @@
+0 HEAD
+0 NOTE Alex Saltstein
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE My Family
+1 DATE 5 SEP 2020
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I3@
+2 NAME Me
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Keith /Saltstein/
+2 GIVN Keith
+2 SURN Saltstein
+2 _MARNM Saltstein
+1 SEX M
+1 BIRT
+2 DATE 1 AUG 1969
+1 FAMS @F1@
+1 FAMC @F2@
+0 @I2@ INDI
+1 NAME Jessica /Wallin/
+2 GIVN Jessica
+2 SURN Wallin
+2 _MARNM Saltstein
+1 SEX F
+1 BIRT
+2 DATE 9 MAY 1969
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Alex /Saltstein/
+2 GIVN Alex
+2 SURN Saltstein
+2 _MARNM Saltstein
+1 SEX M
+1 BIRT
+2 DATE 4 MAR 1999
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Maddie /Saltstein/
+2 GIVN Maddie
+2 SURN Saltstein
+2 _MARNM Saltstein
+1 SEX F
+1 BIRT
+2 DATE 24 OCT 2002
+1 FAMC @F1@
+0 @I5@ INDI
+1 NAME Elliot /Saltstein/
+2 GIVN Elliot
+2 SURN Saltstein
+2 _MARNM Saltstein
+1 SEX M
+1 BIRT
+2 DATE 14 JUN 1945
+1 DEAT Y
+2 DATE 15 SEP 2005
+1 FAMS @F2@
+1 FAMS @F3@
+0 @I6@ INDI
+1 NAME Geri /Goldstein/
+2 GIVN Geri
+2 SURN Goldstein
+2 _MARNM Starker
+1 SEX F
+1 BIRT
+2 DATE 12 JUN 1954
+1 FAMS @F2@
+1 FAMS @F4@
+0 @I7@ INDI
+1 NAME Doug /Saltstein/
+2 GIVN Doug
+2 SURN Saltstein
+2 _MARNM Saltstein
+1 SEX M
+1 BIRT
+2 DATE 15 JUL 1975
+1 FAMS @F5@
+1 FAMC @F2@
+0 @I8@ INDI
+1 NAME Harold /Starker/
+2 GIVN Harold
+2 SURN Starker
+2 _MARNM Starker
+1 SEX M
+1 BIRT
+2 DATE 9 MAY 1935
+1 FAMS @F4@
+0 @I9@ INDI
+1 NAME Susan /Walls/
+2 GIVN Susan
+2 SURN Walls
+2 _MARNM Saltstein
+1 SEX F
+1 BIRT
+2 DATE 10 OCT 1956
+1 FAMS @F3@
+1 FAMS @F6@
+0 @I10@ INDI
+1 NAME Kate /Saltstein/
+2 GIVN Kate
+2 SURN Saltstein
+2 _MARNM Bentley
+1 SEX F
+1 BIRT
+2 DATE 10 MAY 1985
+1 FAMS @F7@
+1 FAMC @F3@
+0 @I11@ INDI
+1 NAME Allie /Saltstein/
+2 GIVN Allie
+2 SURN Saltstein
+2 _MARNM Saltstein
+1 SEX F
+1 BIRT
+2 DATE 13 JUN 1990
+1 FAMC @F3@
+0 @I12@ INDI
+1 NAME Alfie /Bentley/
+2 GIVN Alfie
+2 SURN Bentley
+2 _MARNM Bentley
+1 SEX M
+1 BIRT
+2 DATE 14 MAY 2008
+1 FAMC @F7@
+0 @I13@ INDI
+1 NAME Alfred /Bentley/
+2 GIVN Alfred
+2 SURN Bentley
+2 _MARNM Bentley
+1 SEX M
+1 BIRT
+2 DATE 11 APR 1986
+1 FAMS @F7@
+0 @I14@ INDI
+1 NAME Christy /Barnes/
+2 GIVN Christy
+2 SURN Barnes
+2 _MARNM Saltstein
+1 SEX F
+1 BIRT
+2 DATE 8 MAY 1980
+1 DEAT Y
+2 DATE 7 JUL 2020
+1 FAMS @F5@
+0 @I15@ INDI
+1 NAME Jerry /Jones/
+2 GIVN Jerry
+2 SURN Jones
+2 _MARNM Jones
+1 SEX M
+1 BIRT
+2 DATE 8 APR 1954
+1 FAMS @F6@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 _CURRENT Y
+0 @F2@ FAM
+1 HUSB @I5@
+1 WIFE @I6@
+1 CHIL @I1@
+1 CHIL @I7@
+1 MARR
+2 DATE 15 JUN 1980
+1 DIV
+1 _CURRENT N
+0 @F3@ FAM
+1 HUSB @I5@
+1 WIFE @I9@
+1 CHIL @I10@
+1 CHIL @I11@
+1 _CURRENT N
+0 @F6@ FAM
+1 HUSB @I15@
+1 WIFE @I9@
+1 _CURRENT Y
+0 @F4@ FAM
+1 HUSB @I8@
+1 WIFE @I6@
+1 _CURRENT Y
+0 @F5@ FAM
+1 HUSB @I7@
+1 WIFE @I14@
+1 _CURRENT Y
+0 @F7@ FAM
+1 HUSB @I13@
+1 WIFE @I10@
+1 CHIL @I12@
+1 _CURRENT N
+0 TRLR
