@@ -1,5 +1,5 @@
 """
-Author: Alex Saltstein
+Author: Alex Saltstein, Daniel Collins, James Surless, Miriam Podkolzin, Kenny Mason, Brandon Patton
 Description: This python script takes as input the name of your GEDCOM file that you want to read then outputs to the console
     "--> <input line>" then
     "<-- <level>|<tag>|<valid?> : Y or N|<arguments>"
@@ -8,11 +8,53 @@ Description: This python script takes as input the name of your GEDCOM file that
       <valid?> has the value 'Y' if the tag is one of the supported tags or 'N' otherwise.  The set of all valid tags for our project is specified in the Project Overview document.
       <arguments> is the rest of the line beyond the level and tag.
 """
+class Individual:
+  def __init__(self, iD, name, gender, birthday, age, alive, death, child, spouse):
+    self.iD = iD
+    self.name = name
+    self.gender = gender
+    self.birthday = birthday
+    self.age = age
+    self.alive = alive
+    self.death = death
+    self.child = child
+    self.spouse = spouse
+
+  def addChild(self,child):
+    self.child.append(child)
+
+  def toList(self):
+    return 
+    [self.iD,self.name,self.gender,self.birthday,self.age,self.alive,
+    self.death,self.child if len(self.child) != 0 else "NA",self.spouse]
+
+class Family:
+  def __init__(self, iD, married, divorced, husbId, husbName, wifeId, wifeName, children):
+    self.iD = iD
+    self.married = married
+    self.divorced = divorced
+    self.husbId = husbId
+    self.husbName = husbName
+    self.wifeId = wifeId
+    self.wifeName = wifeName
+    self.children = children
+
+  def addChild(self,child):
+    self.children.append(child)
+
 validTags = ["INDI","NAME","SEX","BIRT","DEAT","FAMC","FAMS","FAM","MARR","HUSB","WIFE","CHIL","DIV","DATE","HEAD","TRLR","NOTE"]
 
-fileName = input("Input the name of the file you want to read:\n")
-f = open(fileName, "r")
+#fileName = input("Input the name of the file you want to read:\n")
+f = open("my-family.ged", "r")
 
+I = Individual("1234", "John", "M", "20 AUG 1998", "22", "Y", "NA", [], "NA")
+
+I.addChild("John")
+I.death = "20 MAR 1969"
+print(I.child)
+print(I.death)
+
+"""
 for line in f:
   l = line[:-1] if line.find("\n") != -1 else line
   print("-->",l)
@@ -26,4 +68,5 @@ for line in f:
       print("<--", list[0] + "|" + list[2] + "|Y|" + list[1])
     except:
       print("<--", list[0] + "|" + list[1] + "|N|" + " ".join(list[2:]))
-      
+
+"""
