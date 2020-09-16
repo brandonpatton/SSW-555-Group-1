@@ -1,0 +1,165 @@
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE My Family
+1 DATE 14 SEP 2020
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Miriam Podkolzin
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Miriam /Podkolzin/
+2 GIVN Miriam
+2 SURN Podkolzin
+2 _MARNM Podkolzin
+1 SEX F
+1 BIRT
+2 DATE 2 NOV 1998
+1 FAMC @F1@
+0 @I2@ INDI
+1 NAME Simon /Podkolzin/
+2 GIVN Simon
+2 SURN Podkolzin
+2 _MARNM Podkolzin
+1 SEX M
+1 BIRT
+2 DATE 3 JUN 1969
+1 FAMS @F1@
+1 FAMC @F2@
+0 @I3@ INDI
+1 NAME Larissa /Kholodnova/
+2 GIVN Larissa
+2 SURN Kholodnova
+2 _MARNM Kholodnova
+1 SEX F
+1 BIRT
+2 DATE 10 APR 1969
+1 FAMS @F1@
+1 FAMC @F3@
+0 @I4@ INDI
+1 NAME Michael /Kholodnova/
+2 GIVN Michael
+2 SURN Kholodnova
+2 _MARNM Kholodnova
+1 SEX M
+1 BIRT
+2 DATE 5 JUL 1938
+1 DEAT Y
+2 DATE 16 MAY 1990
+1 FAMS @F3@
+0 @I5@ INDI
+1 NAME Tamara /Kholodnova/
+2 GIVN Tamara
+2 SURN Kholodnova
+2 _MARNM Kholodnova
+1 SEX F
+1 BIRT
+2 DATE 21 NOV 1929
+2 PLAC Moscow, Russia
+1 DEAT Y
+2 DATE 7 JUN 2020
+1 FAMS @F3@
+0 @I6@ INDI
+1 NAME George /Podkolzin/
+2 GIVN George
+2 SURN Podkolzin
+2 _MARNM Podkolzin
+1 SEX M
+1 BIRT
+2 DATE 3 MAR 1940
+1 DEAT Y
+2 DATE 5 JUN 1990
+1 FAMS @F2@
+1 FAMS @F4@
+0 @I7@ INDI
+1 NAME Marina /Dobrovinskaya/
+2 GIVN Marina
+2 SURN Dobrovinskaya
+2 _MARNM Dobrovinskaya
+1 SEX F
+1 BIRT
+2 DATE 20 SEP 1940
+1 FAMS @F2@
+0 @I8@ INDI
+1 NAME Olga /Kialina/
+2 GIVN Olga
+2 SURN Kialina
+2 _MARNM Kialina
+1 SEX F
+1 BIRT
+2 DATE 20 OCT 1941
+1 FAMS @F4@
+0 @I9@ INDI
+1 NAME Irene /Podkolzin/
+2 GIVN Irene
+2 SURN Podkolzin
+2 _MARNM Podkolzin
+1 SEX F
+1 BIRT
+2 DATE 21 AUG 1992
+1 FAMS @F5@
+1 FAMC @F1@
+0 @I10@ INDI
+1 NAME Igor /Kialina/
+2 GIVN Igor
+2 SURN Kialina
+2 _MARNM Kialina
+1 SEX M
+1 BIRT
+2 DATE 5 DEC 1970
+1 FAMC @F4@
+0 @I11@ INDI
+1 NAME Steve /Allen/
+2 GIVN Steve
+2 SURN Allen
+2 _MARNM Allen
+1 SEX M
+1 BIRT
+2 DATE 4 APR 1990
+1 FAMS @F5@
+0 @F1@ FAM
+1 HUSB @I2@
+1 WIFE @I3@
+1 CHIL @I1@
+1 CHIL @I9@
+1 MARR
+2 DATE 2 MAR 1990
+2 PLAC London, England
+1 _SEPR
+2 DATE 6 JUL 2010
+1 _CURRENT Y
+0 @F2@ FAM
+1 HUSB @I6@
+1 WIFE @I7@
+1 CHIL @I2@
+1 MARR
+2 DATE 8 MAY 1951
+2 PLAC Moscow
+1 DIV
+2 DATE 7 MAR 1960
+1 _CURRENT N
+0 @F4@ FAM
+1 HUSB @I6@
+1 WIFE @I8@
+1 CHIL @I10@
+1 MARR
+2 DATE 7 NOV 1953
+2 PLAC Moscow
+1 _CURRENT Y
+0 @F3@ FAM
+1 HUSB @I4@
+1 WIFE @I5@
+1 CHIL @I3@
+1 MARR
+2 DATE 5 AUG 1950
+2 PLAC Moscow, Russia
+1 _CURRENT Y
+0 @F5@ FAM
+1 HUSB @I11@
+1 WIFE @I9@
+1 _CURRENT Y
+0 TRLR
