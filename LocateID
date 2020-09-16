@@ -1,0 +1,22 @@
+
+fileName = input("Input the name of the file you want to read:\n")
+f = open(fileName, "r")
+
+
+individuals = []
+families = []
+
+def findat(f):
+    for line in f:
+        linelist = line.split(" ")
+        i = linelist[1]
+        if i[0] == "@":
+            if i[1] == "F":
+                if i[-1]
+                families.append(i[1:-1])
+            if i[1] == "I":
+                individuals.append(i[1:-1])
+
+findat(f)     
+print(individuals)
+print(families)     
