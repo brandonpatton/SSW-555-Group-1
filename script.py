@@ -1,5 +1,7 @@
 from prettytable import PrettyTable
 from datetime import datetime
+import importlib
+utils = importlib.import_module("utilities")
 """
 Author: Alex Saltstein, Daniel Collins, James Surless, Miriam Podkolzin, Kenny Mason, Brandon Patton
 Description: This python script reads the specified GEDCOM file that you want to read then outputs in a
@@ -153,7 +155,11 @@ def findat(f):
           #do nothing cause not valid tag
           pass
       
+#every week we just integrate specific functions for sprint formatting is specified in sprintChecklist.pdf
+def printErrors():
+  utils.sprint1(individuals)
       
 findat(f)
 printIndividuals(individuals)
 printFamily(families)
+printErrors()
