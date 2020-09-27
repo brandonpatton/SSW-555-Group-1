@@ -157,8 +157,9 @@ def findat(f):
       
 #every week we just integrate specific functions for sprint formatting is specified in sprintChecklist.pdf
 def printErrors():
-  # utils.sprint1(individuals)
-  print("needs to be implemented")
+  utils.us03DeathBeforeBirth(individuals)
+  utils.us04MarriageBeforeDivorce(families)
+  # print("needs to be implemented")
       
 findat(f)
 printIndividuals(individuals)
