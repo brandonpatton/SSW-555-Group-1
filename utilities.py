@@ -30,3 +30,43 @@ def us04MarriageBeforeDivorce(families):
             print(KEY_WORD + fam.iD + ": Divorced " + fam.divorced + " before married " + fam.married)
             output.append(fam.iD)
     return output
+
+'''
+
+    This function loops through individuals and makes sure that
+    individuals ages are less than 150 years of age. (i.age < 150)
+    If there is an error, outputs information about error and list of id's
+    with errors
+
+'''
+
+def us07AgeOver150(individuals):
+    KEY_WORD = "ERROR: INDIVIDUALS: US07: "
+    output = []
+    for indi in individuals:
+        isOver150 = int(indi.age) > 149
+        if isOver150:
+            print(KEY_WORD + indi.iD + ": Age " + indi.age + ", over 150")
+            output.append(indi.iD)
+    return output
+
+'''
+
+    This function loops through families and makes sure that
+    birth of all children occur after marriage and if there is an error, outputs 
+    information about error and list of id's with errors.
+
+'''
+
+def us08BirthBeforeMarriage(families, individuals):
+    KEY_WORD = "ERROR: FAMILY: US08: "
+    output = []
+    isBirthBeforeMarriage = False
+    for fam in families:
+        for indi in individuals:
+            if (indi.iD in fam.children and (datetime.strptime(indi.birthday, '%d %b %Y') - datetime.strptime(fam.married, '%d %b %Y')).days <= 0):
+                isBirthBeforeMarriage = True
+                if isBirthBeforeMarriage:
+                    print(KEY_WORD + fam.iD + ": Married " + fam.married + " after birth of " + indi.name + " on " + indi.birthday)
+                    output.append(fam.iD)
+    return output

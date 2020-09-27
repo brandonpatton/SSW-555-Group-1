@@ -4,6 +4,7 @@ import importlib
 utils = importlib.import_module("utilities")
 """
 Author: Alex Saltstein, Daniel Collins, James Surless, Miriam Podkolzin, Kenny Mason, Brandon Patton
+
 Description: This python script reads the specified GEDCOM file that you want to read then outputs in a
   pretty format the individuals and the families
     "--> <input line>" then
@@ -159,8 +160,9 @@ def findat(f):
 def printErrors():
   utils.us03DeathBeforeBirth(individuals)
   utils.us04MarriageBeforeDivorce(families)
-  # print("needs to be implemented")
-      
+  utils.us07AgeOver150(individuals)
+  utils.us08BirthBeforeMarriage(families, individuals)
+
 findat(f)
 printIndividuals(individuals)
 printFamily(families)
