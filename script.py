@@ -162,6 +162,7 @@ def printErrors():
   utils.us04MarriageBeforeDivorce(families)
   utils.us07AgeOver150(individuals)
   utils.us08BirthBeforeMarriage(families, individuals)
+  utils.us01DatesBeforeCurrentDate(individuals,families)
 
 findat(f)
 printIndividuals(individuals)
