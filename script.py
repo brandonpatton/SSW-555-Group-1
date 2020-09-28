@@ -156,10 +156,13 @@ def findat(f):
           pass
       
 #every week we just integrate specific functions for sprint formatting is specified in sprintChecklist.pdf
-def printErrors():
-  utils.sprint1(individuals)
+#def printErrors():
+  #utils.sprint1(individuals)
       
 findat(f)
-printIndividuals(individuals)
-printFamily(families)
-printErrors()
+#print(individuals)
+#print(families)
+#printIndividuals(individuals)
+#printFamily(families)
+utils.birthBeforeDeathOfParents(families, individuals)
+#printErrors()
