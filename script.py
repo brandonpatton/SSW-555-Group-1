@@ -4,6 +4,7 @@ import importlib
 utils = importlib.import_module("utilities")
 """
 Author: Alex Saltstein, Daniel Collins, James Surless, Miriam Podkolzin, Kenny Mason, Brandon Patton
+
 Description: This python script reads the specified GEDCOM file that you want to read then outputs in a
   pretty format the individuals and the families
     "--> <input line>" then
@@ -156,13 +157,23 @@ def findat(f):
           pass
       
 #every week we just integrate specific functions for sprint formatting is specified in sprintChecklist.pdf
+
 #def printErrors():
   #utils.sprint1(individuals)
       
+
+def printErrors():
+  #utils.us03DeathBeforeBirth(individuals)
+  #utils.us04MarriageBeforeDivorce(families)
+  #utils.us07AgeOver150(individuals)
+  #utils.us08BirthBeforeMarriage(families, individuals)
+  #utils.us01DatesBeforeCurrentDate(individuals,families)
+  #utils.us09BirthBeforeDeathOfParents(families, individuals)
+  pass
+
 findat(f)
 #print(individuals)
 #print(families)
 #printIndividuals(individuals)
 #printFamily(families)
-utils.birthBeforeDeathOfParents(families, individuals)
-#printErrors()
+printErrors()
